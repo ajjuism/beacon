@@ -1,0 +1,52 @@
+---
+import Search from './Search';
+
+const sidebarItems = [
+  {
+    section: 'Getting Started',
+    items: [
+      { label: 'Introduction', href: '/docs/introduction' },
+      { label: 'Installation', href: '/docs/installation' },
+      { label: 'Configuration', href: '/docs/configuration' },
+    ],
+  },
+  {
+    section: 'Core Concepts',
+    items: [
+      { label: 'Basic Usage', href: '/docs/basic-usage' },
+      { label: 'Advanced Features', href: '/docs/advanced-features' },
+    ],
+  },
+];
+---
+
+<div class="lg:hidden fixed inset-0 bg-gray-600 bg-opacity-75 z-20 transition-opacity duration-300 ease-in-out" id="sidebar-overlay" style="display: none;" aria-hidden="true"></div>
+
+<aside id="sidebar" class="w-72 h-screen bg-white border-r border-gray-200 fixed overflow-y-auto transition-transform duration-300 ease-in-out lg:translate-x-0 -translate-x-full z-30">
+  <div class="p-4">
+    <div class="mb-6">
+      <Search client:load />
+    </div>
+    <nav>
+      {sidebarItems.map((section) => (
+        <div class="mb-8">
+          <h5 class="mb-3 text-sm font-semibold text-gray-900 uppercase tracking-wider">
+            {section.section}
+          </h5>
+          <ul class="space-y-2">
+            {section.items.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md text-sm transition-colors duration-150"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </div>
+</aside>
