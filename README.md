@@ -35,22 +35,8 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:4321` to see your documentation site.
+4. Visit `http://localhost:4321` to see your documentation site.
 
-## 📦 Project Structure
-
-/
-├── public/
-│ └── favicon.svg
-├── src/
-│ ├── components/
-│ │ ├── features/
-│ │ └── home/
-│ ├── layouts/
-│ │ └── DocsLayout.astro
-│ └── pages/
-│ └── docs/
-└── package.json
 
 ## 🛠️ Tech Stack
 
